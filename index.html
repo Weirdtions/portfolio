@@ -1,233 +1,233 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lasso — Dark Anime Dev</title>
-
-  <!-- Fuentes -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weirdtions Portfolio</title>
   <style>
-    /* ==================== GLOBAL ==================== */
-    body {
+    @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;700&display=swap');
+
+    * {
       margin: 0;
-      background: #0a0a0f;
-      font-family: 'Poppins', sans-serif;
-      color: #e5e0ff;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Kanit', sans-serif;
+    }
+
+    body {
+      background: #0b0b0d;
+      color: #e5e5e5;
       overflow-x: hidden;
     }
 
-    a {
-      color: #b68aff;
-      text-decoration: none;
-      transition: 0.2s;
-    }
-    a:hover {
-      color: #d3baff;
-    }
-
-    /* ==================== PARTICLES ==================== */
-    .particles {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      pointer-events: none;
-      z-index: 1;
-      overflow: hidden;
-    }
-
-    .particle {
-      position: absolute;
-      width: 3px; height: 3px;
-      background: #c39bff;
-      border-radius: 50%;
-      opacity: 0.8;
-      animation: floatUp 6s linear infinite;
-      filter: drop-shadow(0 0 6px #c39bff);
-    }
-
-    @keyframes floatUp {
-      0% { transform: translateY(0) scale(1); opacity: 0.6; }
-      100% { transform: translateY(-120vh) scale(0.2); opacity: 0; }
-    }
-
-    /* ==================== HEADER ==================== */
+    /* --- Header --- */
     header {
-      position: relative;
-      text-align: center;
-      padding: 130px 20px 100px;
-      background: linear-gradient(180deg, #151520, #0a0a0f);
-      z-index: 10;
+      position: sticky;
+      top: 0;
+      background: rgba(10, 10, 12, 0.8);
+      backdrop-filter: blur(8px);
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
     }
 
-    .wave {
-      position: absolute;
-      bottom: 0;
+    header h1 {
+      font-size: 28px;
+      font-weight: 700;
+      color: #a970ff;
+      letter-spacing: 2px;
+    }
+
+    nav a {
+      margin-left: 30px;
+      text-decoration: none;
+      color: #d1d1d1;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #a970ff;
+    }
+
+    /* --- Particles --- */
+    #particles {
+      position: fixed;
+      top: 0;
       left: 0;
       width: 100%;
+      height: 100%;
+      z-index: -1;
+      pointer-events: none;
     }
 
-    h1 {
-      font-size: 2.8em;
-      font-weight: 600;
-      color: #d8caff;
-      margin-bottom: 10px;
+    /* --- Hero Section --- */
+    .hero {
+      text-align: center;
+      padding: 140px 20px 120px;
     }
 
-    h2 {
-      color: #a48cff;
-      font-size: 1.3em;
-      font-weight: 300;
-      letter-spacing: 0.5px;
-      max-width: 700px;
+    .hero h2 {
+      font-size: 52px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      opacity: 0.8;
+    }
+
+    /* --- Work Cards --- */
+    .grid {
+      width: 90%;
+      max-width: 1200px;
       margin: auto;
-    }
-
-    /* ==================== SECTIONS ==================== */
-    .section {
-      max-width: 900px;
-      margin: 80px auto;
-      padding: 20px 30px;
-      background: #111118;
-      border-radius: 18px;
-      box-shadow: 0 0 22px rgba(120, 80, 200, 0.15);
-      position: relative;
-      z-index: 10;
-    }
-
-    .section h3 {
-      color: #cbb3ff;
-      margin-bottom: 16px;
-      font-size: 1.6em;
-      font-weight: 600;
-    }
-
-    /* ==================== PROJECT CARDS ==================== */
-    .projects {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 24px;
-      margin-top: 20px;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 30px;
+      padding-bottom: 80px;
     }
 
     .card {
-      background: #16161f;
-      padding: 22px;
+      background: #121216;
+      border: 1px solid rgba(255,255,255,0.07);
       border-radius: 14px;
-      border: 1px solid #29293d;
-      transition: 0.25s ease;
-      box-shadow: 0 0 14px rgba(90, 60, 160, 0.05);
+      overflow: hidden;
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
     }
 
     .card:hover {
-      transform: translateY(-6px);
-      border-color: #6e41d8;
-      box-shadow: 0 0 22px rgba(130, 80, 255, 0.25);
+      transform: translateY(-8px);
+      box-shadow: 0 0 25px rgba(169,112,255,0.25);
     }
 
-    .card h4 {
-      margin: 0 0 10px;
-      color: #cebaff;
-      font-size: 1.2em;
+    .card img, .card video {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
     }
 
-    .card p {
-      font-size: 0.95em;
-      color: #bfb6dd;
-      line-height: 1.5;
+    .card-content {
+      padding: 20px;
     }
 
-    /* ==================== FOOTER ==================== */
-    footer {
-      text-align: center;
-      padding: 40px 0;
-      font-size: 0.9em;
-      color: #6f6a86;
-      z-index: 10;
+    .card-content h3 {
+      margin-bottom: 10px;
+      color: #cda4ff;
+      font-size: 20px;
     }
+
+    .tags {
+      margin-top: 12px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag {
+      padding: 4px 10px;
+      background: #1c1c22;
+      border-radius: 6px;
+      font-size: 13px;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
   </style>
 </head>
-
 <body>
 
-  <!-- PARTICLES -->
-  <div class="particles"></div>
+  <canvas id="particles"></canvas>
 
-  <!-- HEADER -->
   <header>
-    <h1>Lasso</h1>
-    <h2>Desarrollador de juegos anime en Roblox — sistemas, combate, gacha, UI & ambientación oscura.</h2>
-
-    <!-- Anime wave -->
-    <svg class="wave" height="80" viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg">
-      <path fill="#0a0a0f" d="M0,64L1440,0L1440,80L0,80Z"></path>
-    </svg>
+    <h1>WEIRDTIONS</h1>
+    <nav>
+      <a href="#projects">Proyectos</a>
+      <a href="#about">Sobre mí</a>
+    </nav>
   </header>
 
-  <!-- PROJECTS -->
-  <div class="section">
-    <h3>Proyectos</h3>
+  <section class="hero">
+    <h2>Dark Anime Developer Portfolio</h2>
+    <p>Roblox systems • Combat • UI • Gameplay • Optimization</p>
+  </section>
 
-    <div class="projects">
+  <section id="projects" class="grid">
 
-      <div class="card">
-        <h4>Academia Harune Astra</h4>
-        <p>Escuela anime con sistema gacha, NPCs con rutas y combate automático estilo simulación. Iluminación oscura tipo anime.</p>
-        <a href="#">Ver proyecto</a>
+    <!-- Example Card 1 -->
+    <div class="card">
+      <img src="https://placehold.co/600x400/16161a/a970ff?text=Preview" alt="project-img" />
+      <div class="card-content">
+        <h3>Nombre del Proyecto</h3>
+        <p>Descripción breve del sistema, mecánica o aporte principal.</p>
+
+        <div class="tags">
+          <span class="tag">Scripting</span>
+          <span class="tag">AI NPC</span>
+          <span class="tag">Gacha</span>
+        </div>
       </div>
-
-      <div class="card">
-        <h4>Sistema de Combate Simulado</h4>
-        <p>Motor de batalla modulable: stats, buffs, debuffs, triggers, animaciones sincronizadas.</p>
-        <a href="#">Ver código</a>
-      </div>
-
-      <div class="card">
-        <h4>Gacha Engine</h4>
-        <p>Banners, pity, rates configurables, animación de invocación oscura con efectos tipo anime.</p>
-        <a href="#">Repositorio</a>
-      </div>
-
     </div>
-  </div>
 
-  <!-- SKILLS -->
-  <div class="section">
-    <h3>Habilidades</h3>
-    <p>Sistemas · Luau avanzado · Arquitectura modular · IA de NPCs · UI dark anime · DataStores · Tween avanzado · Pathfinding · Optimización · FX anime.</p>
-  </div>
+    <!-- Example Card 2 (video) -->
+    <div class="card">
+      <video src="video.mp4" autoplay loop muted></video>
+      <div class="card-content">
+        <h3>Sistema de Combate</h3>
+        <p>Auto-combat estilo Umamusume adaptado a Roblox.</p>
 
-  <!-- CONTACT -->
-  <div class="section">
-    <h3>Contacto</h3>
-    <p>
-      Discord: <strong>weirdtions</strong><br>
-      GitHub: <a href="https://github.com/weirdtions">github.com/weirdtions</a><br>
-    </p>
-  </div>
+        <div class="tags">
+          <span class="tag">Combat</span>
+          <span class="tag">Animation</span>
+          <span class="tag">Systems</span>
+        </div>
+      </div>
+    </div>
 
-  <footer>
-    © 2025 — Lasso | Dark Anime Dev
-  </footer>
+  </section>
 
   <script>
-    // Particles generator
-    const container = document.querySelector('.particles');
+    // --- Minimal Particle Engine ---
+    const canvas = document.getElementById("particles");
+    const ctx = canvas.getContext("2d");
 
-    function spawnParticle() {
-      const p = document.createElement('div');
-      p.classList.add('particle');
-      p.style.left = Math.random() * 100 + 'vw';
-      p.style.top = '100vh';
-      p.style.animationDuration = (4 + Math.random() * 4) + 's';
-      container.appendChild(p);
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
 
-      setTimeout(() => p.remove(), 8000);
+    const particles = [];
+    const count = 80;
+
+    for (let i = 0; i < count; i++) {
+      particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        size: Math.random() * 2 + 1,
+        vx: (Math.random() - 0.5) * 0.5,
+        vy: (Math.random() - 0.5) * 0.5,
+      });
     }
 
-    setInterval(spawnParticle, 250);
-  </script>
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = "rgba(169,112,255,0.7)";
 
+      particles.forEach(p => {
+        p.x += p.vx;
+        p.y += p.vy;
+
+        if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+        if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+        ctx.fill();
+      });
+
+      requestAnimationFrame(animate);
+    }
+
+    animate();
+  </script>
 </body>
 </html>
