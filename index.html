@@ -1,91 +1,381 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Portafolio | Desarrollador</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weirdtions | Roblox Scripter</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Kanit', sans-serif;
+    }
+
+    body {
+      background: #0b0b0d;
+      color: #e5e5e5;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    /* --- Header --- */
+    header {
+      position: sticky;
+      top: 0;
+      background: rgba(10, 10, 12, 0.8);
+      backdrop-filter: blur(8px);
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    header h1 {
+      font-size: 28px;
+      font-weight: 700;
+      color: #a970ff;
+      letter-spacing: 2px;
+    }
+
+    nav a {
+      margin-left: 30px;
+      text-decoration: none;
+      color: #d1d1d1;
+      transition: 0.3s;
+      font-size: 14px;
+      text-transform: uppercase;
+    }
+
+    nav a:hover {
+      color: #a970ff;
+    }
+
+    /* --- Particles --- */
+    #particles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    /* --- Sections General --- */
+    section {
+      width: 90%;
+      max-width: 1200px;
+      margin: 60px auto;
+    }
+
+    .section-title {
+      font-size: 36px;
+      color: #a970ff;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    /* --- Hero Section --- */
+    .hero {
+      text-align: center;
+      padding: 100px 20px 60px;
+    }
+
+    .hero h2 {
+      font-size: 64px;
+      margin-bottom: 10px;
+      background: linear-gradient(to right, #a970ff, #fff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      font-size: 22px;
+      opacity: 0.8;
+    }
+
+    /* --- Grid & Cards --- */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: #121216;
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 14px;
+      overflow: hidden;
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 0 25px rgba(169,112,255,0.25);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .card-content {
+      padding: 20px;
+      flex-grow: 1;
+    }
+
+    .card-content h3 {
+      margin-bottom: 10px;
+      color: #cda4ff;
+      font-size: 20px;
+    }
+
+    .card-content p {
+      font-size: 14px;
+      opacity: 0.7;
+      margin-bottom: 15px;
+    }
+
+    .card-content a {
+      color: #a970ff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    /* --- Tags --- */
+    .tags {
+      margin-top: auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag {
+      padding: 4px 10px;
+      background: #1c1c22;
+      border-radius: 6px;
+      font-size: 12px;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    /* --- About & Skills --- */
+    .content-block {
+      max-width: 900px;
+    }
+
+    ul {
+      list-style-position: inside;
+      margin-bottom: 20px;
+    }
+
+    .tag-link {
+        text-decoration: none;
+        color: inherit;
+    }
+
+  </style>
 </head>
 <body>
-    <nav id="navbar">
-        <div class="logo">Dev<span>Portfolio</span></div>
-        <ul class="nav-links">
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#sobre-mi">Sobre Mí</a></li>
-            <li><a href="#habilidades">Habilidades</a></li>
-            <li><a href="#proyectos">Proyectos</a></li>
-            <li><a href="#contacto">Contacto</a></li>
-        </ul>
+
+  <canvas id="particles"></canvas>
+
+  <header>
+    <h1>WEIRDTIONS</h1>
+    <nav>
+      <a href="#projects">Work</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
     </nav>
+  </header>
 
-    <header id="inicio">
-        <div class="header-content">
-            <h1>Hola, soy <span class="highlight">[Tu Nombre]</span></h1>
-            <p>Desarrollador | Scripter | Estudiante de Ingeniería Informática</p>
-            <a href="#proyectos" class="btn">Ver mi trabajo</a>
+  <section class="hero">
+    <h2>Weirdtions</h2>
+    <p>Roblox Developer & Scripter</p>
+  </section>
+
+  <section id="projects">
+    <h2 class="section-title">Games I've worked in</h2>
+    <p style="text-align: center; margin-bottom: 30px; opacity: 0.6;">Click on the images to watch a video or play the game.</p>
+    
+    <div class="grid">
+      <div class="card">
+        <a href="https://www.roblox.com/games/83786042739944/Subway-Restaurant-Roleplay" target="_blank">
+          <img src="https://tr.rbxcdn.com/180DAY-7998c14dd5353970a750740cd9629d48/768/432/Image/Webp/noFilter" alt="Subway Roleplay" />
+        </a>
+        <div class="card-content">
+          <h3>Subway Restaurant Roleplay</h3>
+          <p>Full implementation of core mechanics and optimizations.</p>
+          <div class="tags">
+            <span class="tag">Main Scripter</span>
+            <span class="tag">UI Scripter</span>
+            <span class="tag">Debugging</span>
+          </div>
         </div>
-    </header>
+      </div>
+    </div>
+  </section>
 
-    <section id="sobre-mi" class="section">
-        <div class="container">
-            <h2>Sobre Mí</h2>
-            <p>Soy un apasionado por la programación y el desarrollo de videojuegos. Actualmente curso Ingeniería Informática y disfruto creando sistemas modulares, optimizando mecánicas y aplicando lógica a la resolución de problemas. Me enfoco en escribir código limpio y escalable, siempre buscando aprender nuevas herramientas y mejorar la arquitectura de mis proyectos.</p>
+  <section>
+    <h2 class="section-title">Projects</h2>
+    <div class="grid">
+      <div class="card">
+        <a href="https://streamable.com/8vircv" target="_blank">
+          <img src="https://i.ibb.co/5hd9XRy0/Roblox-Screen-Shot20260214-201826424.png" alt="Roll an Umamusume" />
+        </a>
+        <div class="card-content">
+          <h3>Roll an Umamusume</h3>
+          <p>RNG based project (early-stage). <br> <a href="https://github.com/Weirdtions/Roll-an-Umamusume" target="_blank">View Repository</a></p>
+          <div class="tags">
+            <span class="tag">RNG</span>
+            <span class="tag">Luau</span>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <section id="habilidades" class="section bg-alt">
-        <div class="container">
-            <h2>Habilidades Técnicas</h2>
-            <div class="skills-grid">
-                <div class="skill-tag">Luau & Roblox Studio</div>
-                <div class="skill-tag">Python</div>
-                <div class="skill-tag">Java</div>
-                <div class="skill-tag">Arquitectura Modular (OOP)</div>
-                <div class="skill-tag">Control de Versiones (Git)</div>
-                <div class="skill-tag">Diseño de Videojuegos</div>
-            </div>
+  <section>
+    <h2 class="section-title">Individual Systems</h2>
+    <div class="grid">
+      <div class="card">
+        <a href="https://streamable.com/4tppvn" target="_blank">
+          <img src="https://i.ibb.co/XZjhmpHh/Roblox-Screen-Shot20260102-184809490.png" alt="Mining" />
+        </a>
+        <div class="card-content">
+          <h3>Mining Framework</h3>
+          <div class="tags">
+            <span class="tag">Mining system</span>
+            <span class="tag">Drop system</span>
+            <span class="tag">Inventory</span>
+          </div>
         </div>
-    </section>
+      </div>
 
-    <section id="proyectos" class="section">
-        <div class="container">
-            <h2>Proyectos Destacados</h2>
-            <div class="project-grid">
-                
-                <div class="project-card">
-                    <h3>Simulador de Gestión (Roblox)</h3>
-                    <p>Desarrollo de sistemas modulares utilizando Programación Orientada a Objetos para físicas de objetos y manejo de network ownership.</p>
-                </div>
-
-                <div class="project-card">
-                    <h3>Sistema de Combate Dinámico</h3>
-                    <p>Implementación de lógicas de combos complejos y arquitectura Single-Script (SSA) para juegos de pelea.</p>
-                </div>
-
-                <div class="project-card">
-                    <h3>[Nombre de tu Proyecto Personal]</h3>
-                    <p>Descripción breve de otro proyecto, como un modelo de simulación de datos o una herramienta desarrollada en Python.</p>
-                </div>
-
-            </div>
+      <div class="card">
+        <a href="https://streamable.com/7yrb4y" target="_blank">
+          <img src="https://i.ibb.co/21bM88f7/Roblox-Screen-Shot20251123-150308540.png" alt="Stamina" />
+        </a>
+        <div class="card-content">
+          <h3>Stamina & Sprint System</h3>
+          <div class="tags">
+            <span class="tag">Responsive UI</span>
+            <span class="tag">UserInputService</span>
+          </div>
         </div>
-    </section>
+      </div>
 
-    <section id="contacto" class="section bg-alt">
-        <div class="container text-center">
-            <h2>Ponte en Contacto</h2>
-            <p>¿Tienes un proyecto en mente, una comisión o simplemente quieres conectar?</p>
-            <br>
-            <a href="mailto:tu-correo@ejemplo.com" class="btn btn-outline">Envíame un Correo</a>
-            <a href="https://github.com/[TuUsuario]" target="_blank" class="btn">Mi GitHub</a>
+      <div class="card">
+        <a href="https://streamable.com/p9arel" target="_blank">
+          <img src="https://i.ibb.co/xTkb9Qv/image.png" alt="Vending" />
+        </a>
+        <div class="card-content">
+          <h3>Coin Generator & Vending</h3>
+          <div class="tags">
+            <span class="tag">Client-Server</span>
+            <span class="tag">Data Management</span>
+          </div>
         </div>
-    </section>
+      </div>
 
-    <footer>
-        <p>&copy; 2026 [Tu Nombre]. Todos los derechos reservados.</p>
-    </footer>
+      <div class="card">
+        <a href="https://streamable.com/cpd4g8" target="_blank">
+          <img src="https://i.ibb.co/7xpnQQR8/Roblox-Screen-Shot20251229-204443627.png" alt="Combat Logging" />
+        </a>
+        <div class="card-content">
+          <h3>Combat Logging</h3>
+          <div class="tags">
+            <span class="tag">Server Security</span>
+            <span class="tag">State Management</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <script src="script.js"></script>
+  <section id="about" class="content-block">
+    <h2 class="section-title" style="text-align: left;">About Me</h2>
+    <ul style="font-size: 18px; opacity: 0.9;">
+      <li>Colombian developer/scripter in Roblox Studio.</li>
+      <li>Computer Engineering student (1st Semester).</li>
+      <li>17 years old | Timezone: UTC-05:00</li>
+    </ul>
+
+    <h3 style="color: #a970ff; margin-bottom: 15px;">Technical Skills</h3>
+    <div style="display:flex; flex-wrap:wrap; gap:10px; margin-bottom: 40px;">
+      <span class="tag">Rojo</span>
+      <span class="tag">OOP</span>
+      <span class="tag">ProfileStore</span>
+      <span class="tag">Spatial Math</span>
+      <span class="tag">UI Programming</span>
+    </div>
+
+    <h3 style="color: #a970ff; margin-bottom: 15px;">Languages</h3>
+    <div style="display:flex; flex-wrap:wrap; gap:10px; margin-bottom: 40px;">
+      <span class="tag">Spanish - Native</span>
+      <span class="tag">English - C2 (EF SET)</span>
+      <span class="tag">Japanese - N5</span>
+    </div>
+
+    <h3 style="color: #a970ff; margin-bottom: 15px;">Certifications</h3>
+    <a href="https://cert.efset.org/RaTxkC" target="_blank" class="tag-link">
+        <span class="tag" style="cursor: pointer;">EF SET English Certificate (C2) - 2026</span>
+    </a>
+  </section>
+
+  <section id="contact" style="margin-bottom: 150px;">
+    <h2 class="section-title">Contact</h2>
+    <div style="text-align: center;">
+      <a href="https://discord.com/users/weirdtions_" target="_blank" style="color:#cda4ff; margin: 0 15px; text-decoration: none;">Discord</a>
+      <a href="https://github.com/weirdtions" target="_blank" style="color:#cda4ff; margin: 0 15px; text-decoration: none;">GitHub</a>
+    </div>
+  </section>
+
+  <script>
+    const canvas = document.getElementById("particles");
+    const ctx = canvas.getContext("2d");
+
+    function resize() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resize);
+    resize();
+
+    const particles = [];
+    for (let i = 0; i < 80; i++) {
+      particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        size: Math.random() * 2 + 1,
+        vx: (Math.random() - 0.5) * 0.4,
+        vy: (Math.random() - 0.5) * 0.4,
+      });
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = "rgba(169,112,255,0.5)";
+      particles.forEach(p => {
+        p.x += p.vx;
+        p.y += p.vy;
+        if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+        if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+        ctx.fill();
+      });
+      requestAnimationFrame(animate);
+    }
+    animate();
+  </script>
 </body>
 </html>
