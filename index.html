@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="An editable Roblox developer portfolio template. Explore example gameplay systems, project case studies, and a commission brief builder.">
+  <meta name="theme-color" content="#f6f5ef">
+  <title>YourName — Roblox Developer</title>
+  <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="portfolio.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#" aria-label="Back to home"><span class="brand-mark" aria-hidden="true"></span><span data-profile="name">YourName</span><span class="brand-suffix">.dev</span></a>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="navigation">Menu <span aria-hidden="true">☰</span></button>
+      <nav id="navigation" aria-label="Main navigation">
+        <a href="#work">Work</a><a href="#expertise">Expertise</a><a href="#about">About</a>
+        <a class="nav-contact" href="#contact">Let's talk <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <section class="hero container" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="tiny-square"></span> INDEPENDENT ROBLOX DEVELOPER</div>
+        <h1 id="hero-title">Good games.<br>Great <span class="serif">systems.</span></h1>
+        <p class="hero-description" data-profile="intro">From the first interaction to the systems behind it. Thoughtful Luau scripting for worlds worth playing.</p>
+        <div class="hero-actions"><a class="button button-dark" href="#work">Explore my work <span aria-hidden="true">↗</span></a><a class="text-link" href="#contact">Have a project in mind? <span aria-hidden="true">→</span></a></div>
+        <div class="hero-note"><span class="status-dot"></span><span data-profile="availability">Portfolio template · make it yours</span></div>
+      </div>
+      <div class="playground" aria-label="Interactive illustration of a game loop">
+        <div class="playground-top"><span><span class="status-dot"></span> THE SYSTEMS PLAYGROUND</span><span class="mono">01 / 03</span></div>
+        <div class="world-wrap">
+          <div class="world-coordinate mono" aria-hidden="true">WORLD_01<br>X: 024 · Y: 008</div>
+          <img class="world-art" src="assets/world.svg" alt="An original isometric illustration of floating platforms, trees, a player, and a reward chest" width="640" height="480">
+          <div class="world-label label-player"><span class="label-dot"></span><span id="world-label">Player spawned</span></div>
+          <span class="world-label label-server"><span class="tiny-square"></span> Server logic</span>
+          <span class="compass mono" aria-hidden="true">Y ↑<br>↙ X &nbsp; Z ↘</span>
+        </div>
+        <div class="playground-bottom">
+          <div><span class="micro-label">INTERACTIVE CONCEPT</span><p id="demo-status" aria-live="polite">Every great game starts with a loop.</p></div>
+          <button id="play-demo" class="play-button" aria-label="Run the browser game loop demo"><span aria-hidden="true">▶</span> Run demo</button>
+        </div>
+        <div class="demo-track" aria-label="Game loop steps"><span class="current">01 Spawn</span><span>02 Quest</span><span>03 Reward</span></div>
+      </div>
+    </section>
+    <div class="stack-strip"><div class="container"><span class="micro-label">THE TOOLKIT</span><span>Luau <span class="stack-symbol">⌘</span></span><span>Roblox Studio <span class="stack-symbol">◇</span></span><span>Rojo <span class="stack-symbol">↔</span></span><span>Git <span class="stack-symbol">⑂</span></span><span class="stack-note">Small details. Better experiences.</span></div></div>
+
+    <section class="section container" id="work" aria-labelledby="work-title">
+      <div class="section-top"><div><p class="eyebrow">01 / SELECTED WORK</p><h2 id="work-title">A little code.<br>A lot of <span class="serif">possibilities.</span></h2></div><p class="section-intro">A closer look at the systems behind the play.<br> <span id="sample-notice">Illustrative projects — replace with your own work.</span></p></div>
+      <div class="work-toolbar"><div class="filters" role="group" aria-label="Filter projects"><button class="filter active" data-filter="all" aria-pressed="true">All work <span id="all-count">3</span></button><button class="filter" data-filter="gameplay" aria-pressed="false">Gameplay</button><button class="filter" data-filter="ai" aria-pressed="false">NPCs & AI</button><button class="filter" data-filter="ui" aria-pressed="false">UI & Systems</button></div><span id="project-count" class="mono" role="status">03 PROJECTS</span></div>
+      <div id="projects" class="project-grid"></div>
+      <noscript><p>Enable JavaScript to browse the example project cards and use the brief builder. This template includes a quest framework, a round system, and an inventory example.</p></noscript>
+      <div class="work-footnote"><span aria-hidden="true">↳</span> More than a thumbnail: open a project to explore its scope, approach, and evidence.</div>
+    </section>
+
+    <section class="expertise-section" id="expertise" aria-labelledby="expertise-title"><div class="container expertise-layout">
+      <div class="expertise-heading"><p class="eyebrow">02 / WHAT I BUILD</p><h2 id="expertise-title">The logic behind<br>the <span class="serif">good stuff.</span></h2><p>Gameplay that feels right.<br>Systems that make sense.</p><a class="text-link" href="#contact">Let's find your project's fit <span aria-hidden="true">↗</span></a></div>
+      <div class="service-list">
+        <article><span class="service-number">01</span><div><h3>Gameplay & interactions</h3><p>Game loops, progression, quests, and the little interactions that bring a world to life.</p><span class="service-tags">GAME LOOPS / QUESTS / PROGRESSION</span></div><span class="service-icon" aria-hidden="true">↗</span></article>
+        <article><span class="service-number">02</span><div><h3>NPCs & world systems</h3><p>Characters with a purpose. State-driven behavior, dialogue, and responsive world interactions.</p><span class="service-tags">STATE MACHINES / DIALOGUE / PATHFINDING</span></div><span class="service-icon" aria-hidden="true">↗</span></article>
+        <article><span class="service-number">03</span><div><h3>Interfaces & foundations</h3><p>Connect what players see to what the game does, with clear client and server responsibilities.</p><span class="service-tags">UI LOGIC / INVENTORY / CLIENT–SERVER</span></div><span class="service-icon" aria-hidden="true">↗</span></article>
+      </div>
+    </div></section>
+
+    <section class="section container about-layout" id="about" aria-labelledby="about-title">
+      <div class="about-visual"><div class="code-top"><span><i></i><i></i><i></i></span><span>developer.luau</span><span>Luau</span></div><pre aria-label="Illustrative developer profile"><code><span class="code-comment">-- A little about the builder</span>
+<span class="code-keyword">local</span> Developer = {
+  name = <span class="code-string" id="code-name">"YourName"</span>,
+  platform = <span class="code-string">"Roblox"</span>,
+  focus = {
+    <span class="code-string">"Thoughtful gameplay"</span>,
+    <span class="code-string">"Clear architecture"</span>,
+    <span class="code-string">"The small details"</span>,
+  },
+}
+
+<span class="code-keyword">return</span> Developer</code></pre><div class="code-bottom"><span class="status-dot"></span> Built with intention.<span class="mono">Ln 14, Col 1</span></div></div>
+      <div class="about-copy"><p class="eyebrow">03 / BEHIND THE CODE</p><h2 id="about-title">A builder's mindset.<br>A player's <span class="serif">perspective.</span></h2><p data-profile="about">Hi, I'm YourName. I turn game ideas into playable systems on Roblox. I care about how an interaction feels, how the code fits together, and how easy it is to keep building.</p><p data-profile="approach">My approach is simple: understand the game, define the scope, and make progress visible. A good handoff should make the next step easier.</p><div id="profile-links" class="profile-links"></div><span class="small-note" id="about-template-note">Sample bio · add your story, specialties, and profile links.</span></div>
+    </section>
+
+    <section class="container process-section" aria-labelledby="process-title"><div class="process-heading"><p class="eyebrow">04 / THE PROCESS</p><h2 id="process-title">From “what if” to <span class="serif">let's play.</span></h2></div><div class="process-grid"><article><span>01 — DISCOVER</span><h3>Start with the idea.</h3><p>Talk through your game, the system you need, and what a successful result looks like.</p></article><article><span>02 — DEFINE</span><h3>Make the scope clear.</h3><p>Agree on deliverables, milestones, budget, and the parts that are out of scope.</p></article><article><span>03 — BUILD</span><h3>See it come together.</h3><p>Review playable progress, share feedback, and test the important edge cases.</p></article><article><span>04 — HANDOFF</span><h3>Keep building.</h3><p>Receive the agreed source files, setup notes, and an explanation of how the pieces fit.</p></article></div></section>
+
+    <section id="contact" class="contact-section" aria-labelledby="contact-title"><div class="container contact-layout"><div class="contact-copy"><p class="eyebrow">05 / YOUR NEXT PROJECT</p><h2 id="contact-title">Have a world<br>in <span class="serif">mind?</span></h2><p>Let's figure out what makes it work.<br>Start with a few details about your idea.</p><div id="contact-channels"><span class="contact-placeholder">Your contact details go here.</span></div><div class="contact-note"><span aria-hidden="true">↗</span><span>A clear brief is the start of a good collaboration.</span></div></div>
+      <form id="brief-form" class="brief-form"><div class="form-heading"><h3>A good place to start</h3><span class="mono">PROJECT BRIEF</span></div><div class="form-row"><label>Your name or handle<input name="name" autocomplete="nickname" placeholder="How should I call you?" maxlength="100" required></label><label>Project type<select name="type"><option>Gameplay system</option><option>NPCs & AI</option><option>UI & inventory</option><option>Existing project support</option><option>Something else</option></select></label></div><label>What are you building?<textarea name="details" rows="3" placeholder="The idea, the system you need, and what it should do…" minlength="20" maxlength="2000" required></textarea></label><div class="form-row"><label>Budget <span class="optional">(optional)</span><input name="budget" placeholder="Amount + currency" maxlength="100"></label><label>Timeline <span class="optional">(optional)</span><input name="timeline" placeholder="A date, or flexible" maxlength="100"></label></div><button class="button button-lime" type="submit">Prepare project brief <span aria-hidden="true">↗</span></button><p class="form-disclaimer">Creates a brief to copy or download. Nothing is sent or stored.</p><div id="brief-result" hidden><label>Your brief<textarea id="brief-output" rows="7" readonly></textarea></label><div class="brief-actions"><button type="button" id="copy-brief" class="small-button">Copy brief</button><button type="button" id="download-brief" class="small-button">Download .txt</button><a id="email-brief" class="small-button" hidden>Open email draft ↗</a></div><p id="brief-feedback" role="status"></p></div></form>
+    </div></section>
+  </main>
+  <footer class="container site-footer"><a class="brand" href="#"><span class="brand-mark" aria-hidden="true"></span><span data-profile="name">YourName</span><span class="brand-suffix">.dev</span></a><span>Made for the next great idea.</span><a href="#main">Back to top ↑</a></footer>
+  <div class="template-bar" id="template-bar"><span>EDITABLE PORTFOLIO TEMPLATE</span><span>Sample projects & copy · original concept illustrations</span></div>
+  <dialog id="project-dialog" aria-labelledby="dialog-title"><button type="button" class="dialog-close" aria-label="Close project details">×</button><p class="eyebrow" id="dialog-category"></p><h2 id="dialog-title"></h2><p id="dialog-summary"></p><div id="dialog-body"></div><div id="dialog-links" class="dialog-links"></div><p class="dialog-note" id="dialog-note"></p></dialog>
+</body>
+</html>
