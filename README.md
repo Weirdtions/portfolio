@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Roblox Developer Portfolio
 
 Plantilla en inglés creada con HTML, CSS y JavaScript, sin dependencias ni proceso de compilación. Incluye ilustraciones SVG originales, filtros de proyectos, fichas de caso, menú móvil y preparación de briefs de contacto.
@@ -83,3 +84,57 @@ README.md         Setup and customization guide
 ```
 
 La plantilla queda preparada para alojamiento estático. No se ha publicado ni vinculado a una cuenta de hosting.
+=======
+# Weirdtions
+
+A Roblox programmer portfolio with a broad introduction, an anime portrait / backend panel, featured projects, independent pages and a GDD contact section. Public copy is English. Editing instructions are Spanish.
+
+- **[PERSONALIZAR.md](PERSONALIZAR.md)**: identity, text, navigation and theme settings.
+- **[PROYECTOS.md](PROYECTOS.md)**: fill the separate, initially empty project file.
+- `content.js`: site copy and settings.
+- `projects.js`: project entries, with a commented template.
+- `theme.css`: the dark blue / lavender theme and cream star.
+
+## Preview
+
+Open `index.html` directly, or run:
+
+```sh
+python3 -m http.server 8000
+```
+
+Then open <http://localhost:8000>. No installation is needed. Relative links support direct file previews and hosting inside a subdirectory. The visible content is included in the HTML even when JavaScript is unavailable.
+
+## Update
+
+After editing:
+
+```sh
+node scripts/render-pages.cjs
+```
+
+The generator validates the configuration and renders all pages before replacing the HTML. Missing images or invalid project references preserve the previous pages.
+
+## Structure
+
+Home has a two-column introduction, a page-access strip, selected projects, a short workflow and a cream contact panel. Portfolio, Services, About and FAQ are separate pages in the navigation. Proof, Clients, Reviews and Terms remain optional templates.
+
+The project list starts empty. An explicitly labeled layout placeholder shows the image / description structure; disable it with `settings.showProjectPlaceholders`. Published projects automatically replace it on Home and Portfolio. Drafts use `published: false`. There are no fabricated commissions, reviews or statistics in the public navigation.
+
+## Check
+
+```sh
+node --check content.js
+node --check projects.js
+node --check app.js
+node tests/configuration.cjs
+```
+
+Automated checks cover configuration behavior and local resource paths. Browser layout and real input need a browser review.
+
+## Fonts and existing media
+
+IBM Plex Sans and IBM Plex Mono are bundled under the SIL Open Font License; see `assets/FONT-LICENSE.txt`. The selected M PLUS Rounded font uses Google Fonts, with a local fallback.
+
+The avatar is the image provided in the existing workspace. The older `combat.webp`, `arena.webp` and `world.webp` reference artwork remains in `assets/` but is not used by the empty project list. That artwork came from VZNZach's reference portfolio and is not work by Weirdtions.
+>>>>>>> 3fdc246 (update)
