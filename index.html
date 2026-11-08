@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#101513">
+
+  <!-- TITULO DE LA PESTAÑA: puedes cambiar el texto que aparece en el navegador. -->
+  <title>[Tu nombre] | Portafolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Space+Grotesk:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+
+    <!-- PALETA: cambia los valores hexadecimales en :root y conserva los nombres de variable.
+      --bg: fondo principal; --panel/--panel2: superficies; --line: bordes;
+      --text/--muted: texto principal/secundario; --lime/--pink: acentos.
+      Si cambias el fondo, actualiza tambien theme-color arriba. Para un tema claro,
+      cambia color-scheme:dark en :root. Revisa que texto y fondo mantengan buen contraste.
+      Rejilla, brillos y algunos fondos con transparencia usan colores directos en CSS;
+      el SVG de imagen de respaldo tambien define colores en el script. Actualizalos aparte
+      si quieres que esos detalles sigan la nueva paleta. -->
+    <style>
+    :root{color-scheme:dark;--bg:#101513;--panel:#19211d;--panel2:#202a24;--line:#344239;--text:#eef2e8;--muted:#a9b5a9;--lime:#c8f169;--pink:#ff8f9c;--mono:"JetBrains Mono",monospace;--display:"Space Grotesk",sans-serif;--body:"Inter",sans-serif}
+    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 var(--body);-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}a:hover{color:var(--lime)}img,video{display:block;max-width:100%}button{font:inherit}.bg-grid{position:fixed;inset:0;pointer-events:none;z-index:-1;background-image:linear-gradient(#a6c58e0d 1px,transparent 1px),linear-gradient(90deg,#a6c58e0d 1px,transparent 1px);background-size:48px 48px;mask-image:linear-gradient(to bottom,#000,transparent 85%)}.bg-glow{position:fixed;z-index:-1;top:0;right:5%;width:40vw;height:480px;pointer-events:none;background:radial-gradient(ellipse,#c8f16912,transparent 70%)}.container{width:min(1120px,calc(100% - 40px));margin-inline:auto}.nav{position:sticky;z-index:10;top:0;min-height:72px;padding:12px max(20px,calc((100vw - 1120px)/2));display:flex;align-items:center;gap:32px;background:#101513eF;border-bottom:1px solid #ffffff12;backdrop-filter:blur(16px)}.nav__brand{display:flex;align-items:center;gap:10px;font:700 19px var(--display);white-space:nowrap}.dot{width:9px;height:9px;background:var(--lime);border-radius:50%;box-shadow:0 0 16px #c8f16988;display:inline-block}.nav__links{display:flex;align-items:center;gap:24px;margin-left:auto}.nav__link,.nav__cta{font-size:13px;font-weight:600}.nav__cta,.btn{border:1px solid var(--line);padding:10px 15px;border-radius:4px;transition:background .18s,border-color .18s,color .18s}.nav__cta:hover,.btn:hover{border-color:var(--lime);background:#c8f16912}.nav__burger{display:none;margin-left:auto;border:0;background:none;color:var(--text);font-size:22px}.mobile-menu{display:none}.hero{padding:76px 0 82px;border-bottom:1px solid var(--line);position:relative;overflow:hidden}.hero__banner{position:absolute;inset:0 0 auto;height:210px;opacity:.28;overflow:hidden}.hero__banner img{width:100%;height:100%;object-fit:cover}.hero__banner-fade{position:absolute;inset:0;background:linear-gradient(0deg,var(--bg),transparent 90%)}.profile{position:relative;display:grid;grid-template-columns:154px 1fr;gap:34px;align-items:start}.profile__avatar-wrap{position:relative;width:140px;aspect-ratio:1}.profile__avatar{width:100%;height:100%;object-fit:cover;border-radius:8px;background:var(--panel);border:1px solid var(--line)}.profile__status{position:absolute;right:7px;bottom:7px;width:14px;height:14px;border:3px solid var(--bg);border-radius:50%;background:#76d69a}.eyebrow,.meta-key{font:11px var(--mono);letter-spacing:.04em;text-transform:uppercase;color:var(--lime)}.profile__info .eyebrow{margin:0 0 8px}.profile__name{font:600 clamp(38px,6vw,64px)/1.02 var(--display);margin:0;letter-spacing:0}.gradient-text{color:var(--lime)}.profile__bio,.section-lead{max-width:720px;color:var(--muted)}.profile__bio a,.showcase__desc a{color:var(--lime);text-decoration:underline;text-underline-offset:3px}.profile__cta,.profile__meta,.cta-strip__actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-weight:600;font-size:13px}.btn svg{width:16px;height:16px}.btn-primary{background:var(--lime);color:#182016;border-color:var(--lime)}.btn-primary:hover{background:#d9ff91;color:#182016}.btn-ghost{background:transparent}.btn-sm{padding:8px 11px}.meta-pill{padding:6px 10px;border:1px solid var(--line);border-radius:3px;color:var(--muted);font:11px var(--mono)}.dot--green{background:#76d69a;box-shadow:none;width:7px;height:7px;margin-right:5px}.meta-key{color:var(--lime)}section{padding:78px 0;border-bottom:1px solid var(--line)}.section-title{font:600 clamp(30px,4vw,44px)/1.12 var(--display);letter-spacing:0;margin:6px 0}.section-lead{margin:10px 0 30px}.studios-grid,.works-grid,.showcase-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.studio,.work,.showcase,.approach{background:var(--panel);border:1px solid var(--line);border-radius:5px;overflow:hidden}.studio{display:grid;grid-template-columns:86px 1fr;padding:20px;gap:18px;transition:border-color .2s,transform .2s}.studio:hover,.work:hover,.showcase:hover{border-color:#82936f;transform:translateY(-2px)}.studio--feature{grid-column:span 2}.studio__logo{width:80px;height:80px;background:var(--panel2);border-radius:4px;overflow:hidden;display:grid;place-items:center}.studio__logo img{width:100%;height:100%;object-fit:contain}.studio__role,.work__group{font:10px var(--mono);text-transform:uppercase;color:var(--lime)}.studio__name,.work__title,.showcase__title{font:600 20px/1.25 var(--display);margin:5px 0}.studio__desc,.work__desc,.showcase__desc{font-size:14px;color:var(--muted);margin:8px 0}.studio__footer{margin-top:12px}.chip,.role-chip{display:inline-block;border:1px solid var(--line);padding:4px 8px;border-radius:3px;font:10px var(--mono);color:var(--muted);margin:2px}.studio__members{font:11px var(--mono);color:var(--muted)}.approach-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.approach{padding:24px}.approach__head{display:flex;align-items:center;gap:12px}.approach__head h3{margin:0;font:600 19px var(--display)}.approach__badge{font:10px var(--mono);padding:5px 8px;border:1px solid #76d69a66;color:#76d69a}.approach__badge--dont{border-color:#ff8f9c66;color:var(--pink)}.approach__list{padding:0;list-style:none;display:grid;gap:9px;margin:20px 0 0;color:var(--muted);font-size:13px}.check{color:#76d69a;margin-right:8px}.cross{color:var(--pink);margin-right:8px}.work,.showcase{padding:20px;transition:border-color .2s,transform .2s}.work--featured{grid-column:span 2;display:grid;grid-template-columns:220px 1fr;gap:20px}.work__media{aspect-ratio:1;background:var(--panel2);border-radius:4px;overflow:hidden}.work__media img{width:100%;height:100%;object-fit:cover}.work__media--small{width:86px;height:86px;float:right;margin:0 0 12px 12px}.work__top{display:flex;align-items:center;justify-content:space-between;gap:10px}.status-pill{font:10px var(--mono);padding:4px 8px;border-radius:3px;background:#76d69a18;color:#8ce5a9}.status-pill--dev{color:#f3cc75;background:#f3cc7518}.work__stats{display:flex;gap:18px;padding:12px 0;color:var(--lime);font:12px var(--mono)}.stat{display:grid;gap:2px}.stat__lbl{font-size:9px;color:var(--muted);text-transform:uppercase}.work__roles{margin:10px 0}.role-chip--accent{color:var(--lime);border-color:#c8f16955}.work__actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.showcase--feature{grid-column:span 2}.showcase__head{display:flex;justify-content:space-between;gap:18px}.showcase__head>div:first-child{max-width:760px}.showcase__tag{font:10px var(--mono);text-transform:uppercase;color:var(--lime)}.showcase__tag--personal{color:var(--pink)}.showcase__videos{display:grid;grid-template-columns:1fr;gap:12px;margin-top:18px}.showcase__videos--2{grid-template-columns:repeat(2,minmax(0,1fr))}.showcase__videos--3{grid-template-columns:repeat(3,minmax(0,1fr))}.showcase figure{margin:0;background:#0b0e0c;border-radius:3px;overflow:hidden}.showcase video{width:100%;aspect-ratio:16/9;object-fit:contain;background:#080a09}.showcase figcaption{padding:7px 10px;color:var(--muted);font:10px var(--mono)}.cta-strip{margin-top:34px;padding:24px 0;border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:20px}.cta-strip .eyebrow{margin:0}.cta-strip__title{font:600 25px var(--display);margin:2px 0}.footer{padding:22px 0;color:var(--muted);font:11px var(--mono)}.footer__inner{display:flex;justify-content:space-between;gap:15px}.heart{color:var(--pink)}.reveal{animation:rise .55s both}.reveal:nth-child(2){animation-delay:.06s}.reveal:nth-child(3){animation-delay:.12s}@keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+    @media(max-width:760px){.nav{gap:12px}.nav__links{display:none}.nav__cta{margin-left:auto}.nav__burger{display:block}.mobile-menu{position:fixed;z-index:9;top:72px;left:0;right:0;padding:16px 20px;background:#101513f5;border-bottom:1px solid var(--line);display:none;grid-template-columns:1fr 1fr;gap:12px}.mobile-menu.is-open{display:grid}.mobile-menu a{padding:10px;border:1px solid var(--line);font-size:13px}.profile{grid-template-columns:90px 1fr;gap:18px}.profile__avatar-wrap{width:88px}.profile__name{font-size:40px}.hero{padding:54px 0}.studios-grid,.works-grid,.showcase-grid{grid-template-columns:1fr}.studio--feature,.work--featured,.showcase--feature{grid-column:auto}.work--featured{grid-template-columns:1fr}.work--featured .work__media{width:100%;aspect-ratio:16/9}.approach-grid{grid-template-columns:1fr}.showcase__videos--3{grid-template-columns:1fr 1fr}.cta-strip{align-items:flex-start;flex-direction:column}.footer__inner{flex-direction:column}.showcase__head{flex-direction:column}}
+    @media(max-width:460px){.container{width:min(100% - 28px,1120px)}.nav{padding-inline:14px}.nav__cta{font-size:11px;padding:8px 10px}.profile{grid-template-columns:1fr}.profile__avatar-wrap{width:84px}.profile__name{font-size:38px}.showcase__videos--2,.showcase__videos--3{grid-template-columns:1fr}section{padding:58px 0}.studio{grid-template-columns:58px 1fr;padding:14px;gap:12px}.studio__logo{width:56px;height:56px}.studio__name{font-size:17px}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
+  </style>
+</head>
+<body>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow" aria-hidden="true"></div>
+
+  <!-- NAVEGACION: cambia los nombres; conserva los destinos # de cada sección en ambos menús. -->
+  <nav class="nav" aria-label="Navegación principal">
+    <a href="#top" class="nav__brand">
+      <span class="dot"></span>
+      <span>[Tu nombre]<span class="gradient-text">.</span>dev</span>
+    </a>
+    <div class="nav__links">
+      <a class="nav__link" href="#studios">Estudios</a>
+      <a class="nav__link" href="#approach">Servicios</a>
+      <a class="nav__link" href="#works">Proyectos</a>
+      <a class="nav__link" href="#showcases">Muestras</a>
+    </div>
+    <a class="nav__cta" href="#contact">Contacto</a>
+    <button type="button" class="nav__burger" aria-label="Abrir menú" aria-expanded="false">☰</button>
+  </nav>
+
+  <div class="mobile-menu" hidden>
+    <a href="#studios">Estudios</a>
+    <a href="#approach">Servicios</a>
+    <a href="#works">Proyectos</a>
+    <a href="#showcases">Muestras</a>
+    <a href="#contact">Contacto</a>
+  </div>
+
+  <!-- PERFIL: sustituye los campos entre corchetes, enlaces y rutas de imagen. -->
+  <header id="top" class="hero hero--compact">
+    <div class="hero__banner" aria-hidden="true">
+      <img src="assets/images/TU-BANNER.jpg" alt="">
+      <div class="hero__banner-fade"></div>
+    </div>
+    <div class="container">
+      <div class="profile">
+        <div class="profile__avatar-wrap">
+          <img class="profile__avatar" src="assets/images/TU-FOTO.jpg" alt="Foto de [tu nombre]">
+          <span class="profile__status" title="[Disponibilidad]"></span>
+        </div>
+        <div class="profile__info">
+          <p class="eyebrow">[Tu especialidad]</p>
+          <h1 class="profile__name font-display">Hola, soy <span class="gradient-text">[Tu nombre]</span></h1>
+          <p class="profile__bio">[Escribe una breve presentación: experiencia, habilidades y tipo de proyectos.]</p>
+          <div class="profile__cta">
+            <a class="btn btn-primary" href="[ENLACE DE CONTACTO]">[Contacto principal]</a>
+            <a class="btn btn-ghost" href="[ENLACE DE PERFIL]">[Otro perfil]</a>
+            <a class="btn btn-ghost" href="#works">Ver proyectos</a>
+          </div>
+          <div class="profile__meta">
+            <div class="meta-pill"><span class="dot dot--green"></span> [Disponibilidad]</div>
+            <div class="meta-pill"><span class="meta-key">experiencia</span> [Años]</div>
+            <div class="meta-pill"><span class="meta-key">proyectos</span> [Cantidad]</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- 01 · ESTUDIOS: duplica esta ficha por cada estudio o afiliación. -->
+  <section id="studios">
+    <div class="container">
+      <div class="reveal is-visible">
+        <p class="eyebrow">01 — Estudios y afiliaciones</p>
+        <h2 class="section-title">Dónde <span class="gradient-text">trabajo</span>.</h2>
+        <p class="section-lead">[Breve introducción a tus estudios, equipos o colaboraciones.]</p>
+      </div>
+      <div class="studios-grid">
+        <a class="studio studio--feature reveal is-visible" href="[ENLACE DEL ESTUDIO]" target="_blank" rel="noopener">
+          <div class="studio__logo"><img src="assets/images/LOGO-ESTUDIO.png" alt="Logo de [nombre del estudio]"></div>
+          <div class="studio__body">
+            <span class="studio__role">[Tu rol]</span>
+            <h3 class="studio__name">[Nombre del estudio]</h3>
+            <p class="studio__desc">[Descripción breve de tu participación.]</p>
+            <div class="studio__footer">
+              <div class="studio__links"><span class="chip">[Enlace o red]</span></div>
+              <span class="studio__members">[Dato opcional]</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 · SERVICIOS: reemplaza o duplica los puntos de cada lista. -->
+  <section id="approach">
+    <div class="container">
+      <div class="reveal is-visible">
+        <p class="eyebrow">02 — Servicios</p>
+        <h2 class="section-title">Lo que <span class="gradient-text">hago</span>.</h2>
+        <p class="section-lead">[Resume el tipo de trabajo que buscas y tus límites profesionales.]</p>
+      </div>
+      <div class="approach-grid">
+        <div class="approach reveal is-visible">
+          <div class="approach__head">
+            <span class="approach__badge approach__badge--do">SÍ</span>
+            <h3>Servicios que ofrezco</h3>
+          </div>
+          <ul class="approach__list">
+            <li><span class="check">✓</span> [Servicio o habilidad]</li>
+          </ul>
+        </div>
+        <div class="approach reveal is-visible" data-delay="1">
+          <div class="approach__head">
+            <span class="approach__badge approach__badge--dont">NO</span>
+            <h3>Trabajos que no acepto</h3>
+          </div>
+          <ul class="approach__list approach__list--dont">
+            <li><span class="cross">✕</span> [Límite o tipo de trabajo]</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 · PROYECTOS: duplica la ficha. Usa el ID real de Roblox en data-place-id solo si corresponde. -->
+  <section id="works">
+    <div class="container">
+      <div class="reveal">
+        <p class="eyebrow">03 — Proyectos</p>
+        <h2 class="section-title">Mis <span class="gradient-text">proyectos</span>.</h2>
+        <p class="section-lead">[Introducción breve a tu trabajo y experiencia.]</p>
+      </div>
+      <div class="works-grid">
+        <article class="work work--featured reveal">
+          <div class="work__media">
+            <img src="assets/images/ICONO-PROYECTO.png" alt="Imagen de [nombre del proyecto]">
+          </div>
+          <div class="work__body">
+            <div class="work__top">
+              <span class="status-pill status-pill--dev">[Estado]</span>
+              <span class="work__group">[Equipo o cliente]</span>
+            </div>
+            <h3 class="work__title">[Nombre del proyecto]</h3>
+            <p class="work__desc">[Describe el proyecto, tu contribución y sus resultados.]</p>
+            <div class="work__stats">
+              <div class="stat"><span class="stat__num">[Dato]</span><span class="stat__lbl">[Métrica]</span></div>
+            </div>
+            <div class="work__roles">
+              <span class="role-chip role-chip--accent">[Tu rol]</span>
+            </div>
+            <div class="work__actions">
+              <a class="btn btn-primary btn-sm" href="[ENLACE DEL PROYECTO]" target="_blank" rel="noopener">Ver proyecto</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 · MUESTRAS: duplica la ficha y cambia el video por uno de assets/videos/. -->
+  <section id="showcases">
+    <div class="container">
+      <div class="reveal">
+        <p class="eyebrow">04 — Muestras</p>
+        <h2 class="section-title">Ejemplos de mi <span class="gradient-text">trabajo</span>.</h2>
+        <p class="section-lead">[Presenta brevemente esta selección de trabajos.]</p>
+      </div>
+      <div class="showcase-grid">
+        <article class="showcase showcase--feature reveal">
+          <header class="showcase__head">
+            <div>
+              <span class="showcase__tag showcase__tag--feature">[Categoría]</span>
+              <h3 class="showcase__title">[Nombre de la muestra]</h3>
+              <p class="showcase__desc">[Describe qué se ve y cuál fue tu contribución.]</p>
+            </div>
+            <div class="showcase__roles">
+              <span class="role-chip role-chip--accent">[Habilidad]</span>
+            </div>
+          </header>
+          <div class="showcase__videos">
+            <figure>
+              <video controls preload="metadata" playsinline>
+                <source src="assets/videos/TU-VIDEO.mp4" type="video/mp4">
+              </video>
+              <figcaption>[Título del video]</figcaption>
+            </figure>
+          </div>
+        </article>
+      </div>
+
+      <!-- 05 · CONTACTO: reemplaza los textos y destinos de los botones. -->
+      <div id="contact" class="cta-strip reveal">
+        <div>
+          <p class="eyebrow cta-strip__eyebrow">[Invitación breve]</p>
+          <h3 class="cta-strip__title">[¿Hablamos de tu proyecto?]</h3>
+        </div>
+        <div class="cta-strip__actions">
+          <a class="btn btn-primary" href="[ENLACE DE CONTACTO]">[Contactar]</a>
+          <a class="btn btn-ghost" href="[ENLACE DE PERFIL]">[Ver perfil]</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 · PIE DE PÁGINA: sustituye tu nombre o créditos. -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div>© <span id="year">2026</span> [Tu nombre]</div>
+      <div>[Créditos opcionales]</div>
+    </div>
+  </footer>
+
+  <script>
+    const menuButton = document.querySelector('.nav__burger');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const setMenuOpen = (isOpen) => {
+      menuButton.setAttribute('aria-expanded', String(isOpen));
+      mobileMenu.hidden = !isOpen;
+      mobileMenu.classList.toggle('is-open', isOpen);
+    };
+
+    menuButton.addEventListener('click', () => {
+      setMenuOpen(menuButton.getAttribute('aria-expanded') !== 'true');
+    });
+    mobileMenu.addEventListener('click', (event) => {
+      if (event.target.closest('a')) setMenuOpen(false);
+    });
+    document.querySelector('#year').textContent = new Date().getFullYear();
+
+    document.querySelectorAll('img').forEach((image) => {
+      const showFallback = () => {
+        if (image.classList.contains('image-fallback')) return;
+        const label = image.alt || 'Portfolio image';
+        const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400"><rect width="640" height="400" fill="#202a24"/><path d="M0 320 180 140l110 110 75-75 275 245H0Z" fill="#344239"/><circle cx="470" cy="108" r="46" fill="#c8f169" fill-opacity=".22"/><text x="50%" y="88%" fill="#eef2e8" font-family="sans-serif" font-size="22" text-anchor="middle">${label.replace(/[&<>"']/g, '')}</text></svg>`;
+        image.src = `data:image/svg+xml,${encodeURIComponent(svg)}`;
+        image.classList.add('image-fallback');
+      };
+
+      image.addEventListener('error', showFallback, { once: true });
+      if (image.complete && image.naturalWidth === 0) showFallback();
+    });
+
+    document.querySelectorAll('video').forEach((video) => {
+      video.addEventListener('error', () => {
+        video.controls = false;
+        video.insertAdjacentHTML('afterend', '<p class="media-fallback">Video preview unavailable</p>');
+      }, { once: true });
+    });
+  </script>
+</body>
+</html>
